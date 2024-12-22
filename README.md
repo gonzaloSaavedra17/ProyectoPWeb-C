@@ -50,51 +50,38 @@ Descripción de Pantallas
 
 Diagrama de la Base de Datos
 
-+-----------------------------+
 |        users               |
-+-----------------------------+
-| user_id (PK)               |
-| nombre                     |
-| apellido                   |
-| email                      |
-| password                   |
-+-----------------------------+
 
-+-----------------------------+
+-> user_id                
+-> nombre                     
+-> apellido                   
+-> email                      
+-> password                   
+
 |   complejos_deportivos     |
-+-----------------------------+
-| id (PK)                    |
-| nombre                     |
-| tipo                       |
-| capacidad                  |
-+-----------------------------+
+-> id                    
+-> nombre                     
+-> tipo                       
+-> capacidad                  
 
-+-----------------------------+
 |          pagos             |
-+-----------------------------+
-| pago_id (PK)               |
-| pedido_id (FK)             |
-| cantidad                   |
-| metodo_pago                |
-| estado                     |
-| fecha                      |
-+-----------------------------+
+-> pago_id                
+-> pedido_id              
+-> cantidad                   
+-> metodo_pago                
+-> estado                     
+-> fecha                      
 
-+-----------------------------+
 |         pedidos            |
-+-----------------------------+
-| pedido_id (PK)             |
-| descripcion                |
-| user_id (FK)               |
-+-----------------------------+
+-> pedido_id             
+-> descripcion                
+-> user_id                
 
-+-----------------------------+
 |          eventos           |
-+-----------------------------+
-| id (PK)                    |
-| tipo_evento                |
-| fecha_evento               |
-+-----------------------------+
+
+-> id (PK)                    
+-> tipo_evento                
+-> fecha_evento               
 
 
 Explicación del Uso de AJAX para CRUD
@@ -113,19 +100,15 @@ El uso de AJAX mejora la interactividad al actualizar solo partes específicas d
 
 Explicación del Uso de Variables de Sesión
 
-Las variables de sesión son fundamentales para mantener el estado del usuario en la aplicación. Se utilizan para:
+Las variables de sesión son importantes para mantener el estado del usuario en la aplicación. En este caso, se utilizan para:
 
-1. Autenticación:
-   - Guardar el `user_id` y el rol (usuario/admin) tras el inicio de sesión.
-2. Personalización:
-   - Mostrar contenido específico según el rol del usuario.
-3. Seguridad:
-   - Asegurar que las acciones sensibles solo sean realizadas por usuarios autenticados.
+1. Autenticación: Basicamente, guardar el `user_id` y el rol (usuario/admin) tras el inicio de sesión.
+2. Personalización: Mostrar contenido específico según el rol del usuario, util debido a que tenemos 2 roles importantes.
+3. Seguridad: Asegurar que las acciones sensibles solo sean realizadas por usuarios autorizados.
 
 Conclusiones
 
 - La aplicación cumple con los objetivos de gestión y visualización de datos, proporcionando interfaces funcionales para usuarios y administradores.
-- El uso de Perl y CGI demuestra la flexibilidad de estas herramientas para aplicaciones web simples.
-- Existen vulnerabilidades importantes relacionadas con la seguridad, como la exposición de credenciales y la falta de validación de datos.
+- El uso de Perl y CGI son buenas herramientas para aplicaciones web simples.
 
 Recomendaciones
