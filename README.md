@@ -59,12 +59,14 @@ Diagrama de la Base de Datos
 -> password                   
 
 |   complejos_deportivos     |
+
 -> id                    
 -> nombre                     
 -> tipo                       
 -> capacidad                  
 
 |          pagos             |
+
 -> pago_id                
 -> pedido_id              
 -> cantidad                   
@@ -73,6 +75,7 @@ Diagrama de la Base de Datos
 -> fecha                      
 
 |         pedidos            |
+
 -> pedido_id             
 -> descripcion                
 -> user_id                
