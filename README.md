@@ -82,7 +82,7 @@ Diagrama de la Base de Datos
 
 |          eventos           |
 
--> id (PK)                    
+-> id                     
 -> tipo_evento                
 -> fecha_evento               
 
