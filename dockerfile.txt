@@ -1,0 +1,21 @@
+FROM perl:5.36-apache
+
+# Instalamos dependencias necesarias
+RUN apt-get update && apt-get install -y \
+    libdbi-perl \
+    libdbd-mysql-perl \
+    mysql-client \
+    libjson-perl \
+    && apt-get clean
+
+# Copiar el código de la aplicación a la imagen
+COPY . /var/www/html/
+
+# Configuramos el script de CGI
+RUN chmod +x /var/www/html/cgi-bin/.pl
+
+# Exponer el puerto 80 para Apache
+EXPOSE 80
+
+# Iniciamos Apache
+CMD ["apachectl", "-D", "FOREGROUND"]
